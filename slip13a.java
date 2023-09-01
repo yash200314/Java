@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class slip13a {
     public static void main(String arg[])
     {
+
         System.out.println("Enter your name:");
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();

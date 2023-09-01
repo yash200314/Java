@@ -12,5 +12,4 @@ public class array {
         int [] flower  = {90 ,56 ,67 , 65};
         System.out.println(flower[2]);
     }
-    
 }

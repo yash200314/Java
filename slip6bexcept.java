@@ -1,50 +1,40 @@
-// half done code
+import java.io.*;
+class NumberZero extends Exception{
+	public NumberZero(){     
+		super("Zero Number Exception");
+	}
+}
+class slip6bexcept{
+	static void addDigit(int num){
+		if(num<10)
+			System.out.println("Addition of first and last digit = "+num);
+		else{
+			int lastDigit=0,firstDigit=0;
+			lastDigit=num%10;
+			while(num >= 10){
+				num = num / 10;
+    			}
+    			firstDigit = num;
 
-// import java.util.Scanner;
+		System.out.println("Addition of first and last digit = "+ (firstDigit + lastDigit));
+	}
 
-// // Custom Exception class
-// class NumberIsZeroException extends Exception {
-//     public NumberIsZeroException() {
-//         super("Number Is Zero");
-//     }
-// }
-  
-// public class slip6bexcept {
-//     // Method to calculate the sum of first and last digit of a number
-//     public static int calculateSumOfFirstAndLastDigit(int number) {
-//         // Convert the number to a positive value (for handling negative numbers)
-//         int positiveNumber = Math.abs(number);
-        
-//         // Extract the first digit
-//         int firstDigit = positiveNumber;
-//         while (firstDigit >= 10) {
-//             firstDigit /= 10;
-//         }
-        
-//         // Extract the last digit
-//         int lastDigit = positiveNumber % 10;
-        
-//         // Calculate the sum of the first and last digit
-//         return firstDigit + lastDigit;
-//     }
+}
+	public static void main(String a[]) throws IOException{ 
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Enter Number=");
+		int number=Integer.parseInt(br.readLine());
+		try
+        {
+		if(number==0)
+			throw new NumberZero();
 
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-
-//         System.out.print("Enter a number: ");
-//         int number = sc.nextInt();
-
-//         try {
-//             // Check if the number is zero
-//             if (number == 0) {
-//                 throw new NumberIsZeroException();
-//             }
-
-//             // Calculate the sum of first and last digit
-//             int sum = calculateSumOfFirstAndLastDigit(number);
-//             System.out.println("Sum of first and last digit: " + sum);
-//         } catch (NumberIsZeroException e) {
-//             System.out.println("Error: " + e.getMessage());
-//         }
-//     }
-// }
+		else
+			addDigit(number);
+		}
+		catch(NumberZero e){
+		System.out.println("Number is 0");
+		System.out.println(e.getMessage());
+		}
+	}
+}

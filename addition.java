@@ -1,6 +1,5 @@
 //write a menu driven program
 import java.util.*;
-
 class addition
 {
     public static void main(String args[])
@@ -40,8 +39,8 @@ class addition
                     break;
                 case 5:
                     System.exit(0);
+                    scanner.close();
             }
-            scanner.close();
        }
     }
 }

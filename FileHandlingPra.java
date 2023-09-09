@@ -8,7 +8,7 @@ public class FileHandlingPra {
         /* 
         File myFile = new File("this.txt");
         try
-        {
+        { 
             myFile.createNewFile();
         }
         catch(IOException e)
@@ -17,6 +17,8 @@ public class FileHandlingPra {
             e.printStackTrace();
         }
         */
+
+
         // code to write in a file
 
         // try

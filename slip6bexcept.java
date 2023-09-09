@@ -1,3 +1,7 @@
+/*Write a java program to accept a number from user, if 
+it zero then throw user defined Exception “Number Is Zero”, otherwise calculate the 
+sum of first and last digit of that number. (Use static keyword). */
+
 import java.io.*;
 class NumberZero extends Exception{
 	public NumberZero(){     

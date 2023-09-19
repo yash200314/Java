@@ -1,4 +1,11 @@
 //Write a java program to display following pattern: 
+
+/*5 
+4 5 
+3 4 5 
+2 3 4 5 
+1 2 3 4 5     
+ */
 public class slip5b {
     
     public static void main(String args[])

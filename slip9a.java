@@ -1,3 +1,5 @@
+/* Write a java program to validate PAN number and Mobile Number. If it is invalid then throw user defined Exception “Invalid Data”, otherwise display it. */
+
 class InvalidDataException extends Exception {
     public InvalidDataException(String message) {
         super(message);
@@ -15,16 +17,14 @@ public class slip9a {
 
             System.out.println("PAN Number: " + panNumber);
             System.out.println("Mobile Number: " + mobileNumber);
-        } 
-        catch (InvalidDataException e) {
+        } catch (InvalidDataException e) {
             System.err.println("Error: " + e.getMessage());
         }
     }
 
     public static void validatePAN(String panNumber) throws InvalidDataException {
         // PAN number validation logic
-        if (!panNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]{1}"))
-         {
+        if (!panNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]{1}")) {
             throw new InvalidDataException("Invalid PAN number");
         }
     }

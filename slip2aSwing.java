@@ -1,67 +1,49 @@
 //Design a screen in Java to handle the Mouse Events such as MOUSE_MOVED and MOUSE_CLICK and 
 //display the position of the Mouse_Click in a TextField. (Use Swings)
- 
-import javax.swing.*;
+
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class slip2aSwing extends JFrame implements MouseListener, MouseMotionListener {
-    private JTextField positionTextField;
+  JTextField t1;
 
-    public slip2aSwing() {
-        setTitle("Mouse Events Demo");
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+  public slip2aSwing() {
+    t1 = new JTextField(25);
+    Font f = new Font("Arial", Font.BOLD, 20);
+    t1.setFont(f);
+    setLayout(new FlowLayout());
+    setVisible(true);
+    setSize(700, 700);
+    add(t1);
+    addMouseListener(this);
+    addMouseMotionListener(this);
+  }
 
-        positionTextField = new JTextField(15);
-        positionTextField.setEditable(false);
+  public void mouseClicked(MouseEvent e) {
+    t1.setText("X Position :" + e.getX() + "Y Position :" + e.getY());
+  }
 
-        addMouseListener(this);
-        addMouseMotionListener(this);
+  public void mousePressed(MouseEvent e) {
+  }
 
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("Mouse Position: "));
-        panel.add(positionTextField);
+  public void mouseReleased(MouseEvent e) {
+  }
 
-        add(panel, BorderLayout.NORTH);
+  public void mouseEntered(MouseEvent e) {
+  }
 
-        setVisible(true);
-    }
+  public void mouseExited(MouseEvent e) {
+  }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new slip2aSwing());
-    }
+  public void mouseMoved(MouseEvent e) {
+    t1.setText("X Position :" + e.getX() + "Y Position :" + e.getY());
+  }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        positionTextField.setText("(" + x + ", " + y + ")");
-    }
+  public void mouseDragged(MouseEvent e) {
+  }
 
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        positionTextField.setText("(" + x + ", " + y + ")");
-    }
-
-    // Other MouseListener and MouseMotionListener methods
-    @Override
-    public void mousePressed(MouseEvent e) { }
-
-    @Override
-    public void mouseReleased(MouseEvent e) { }
-
-    @Override
-    public void mouseEntered(MouseEvent e) { }
-
-    @Override
-    public void mouseExited(MouseEvent e) { }
-
-    @Override
-    public void mouseDragged(MouseEvent e) { }
+  public static void main(String args[]) {
+    slip2aSwing ob = new slip2aSwing();
+  }
 }

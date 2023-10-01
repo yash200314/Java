@@ -1,6 +1,7 @@
-//Define a class Product (pid, pname, price, qty). Write a function to accept the product details, display it and calculate total amount. (use array of Objects)
+// Define a class Product (pid, pname, price, qty). Write a function to accept the product details,
+// display it and calculate total amount. (use array of Objects)
 
-import java.util.Scanner;
+import java.util.*;
 
 class Product {
     String pid;
@@ -15,59 +16,57 @@ class Product {
         this.qty = qty;
     }
 }
-
-public class slip17a {
+public class slip17a{
     public static void main(String[] args) {
-        Product[] products = inputProductDetails();
+        Product[]products =inputProductDetail();
         displayProducts(products);
+
     }
+    public static Product[] inputProductDetail()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the number of products :");
+        int numProduct=sc.nextInt();
+        sc.nextLine();
 
-    public static Product[] inputProductDetails() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of products: ");
-        int numProducts = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline
+        Product[]products= new Product[numProduct];
+        for(int i=0;i<numProduct;i++)
+        {
+            System.out.println("enter the product id :");
+            String pid = sc.nextLine();
 
-        Product[] products = new Product[numProducts];
+            System.out.println("enter product name :");
+            String pname=sc.nextLine();
 
-        for (int i = 0; i < numProducts; i++) {
-            System.out.print("Enter Product ID: ");
-            String pid = scanner.nextLine();
-
-            System.out.print("Enter Product Name: ");
-            String pname = scanner.nextLine();
-
-            System.out.print("Enter Price: ");
-            double price = scanner.nextDouble();
-
-            System.out.print("Enter Quantity: ");
-            int qty = scanner.nextInt();
+            System.out.println("enter the Price");
+            double price = sc.nextDouble();
+            
+            System.out.println("enter quantity :");
+            int qty= sc.nextInt();
 
             products[i] = new Product(pid, pname, price, qty);
-            scanner.nextLine(); // Consume the newline
+            sc.nextLine();
         }
-
-        scanner.close();
+        sc.close();
         return products;
     }
+    public static void displayProducts(Product[]products)
+    {
+       System.out.println("\n Product Details:");
+       System.out.println("*********");
+       double totalAmt=0;
 
-    public static void displayProducts(Product[] products) {
-        System.out.println("\nProduct Details:");
-        System.out.println("================");
+       for(Product product :products)
+       {
+            totalAmt =product.price*product.qty;
+            System.out.println("Product ID"+product.pid);
+            System.out.println("Product name :"+product.pname);
+            System.out.println("Price :"+product.price);
+            System.out.println("Quantity :"+product.qty);
 
-        double totalAmount = 0;
+            System.out.println("********");
 
-        for (Product product : products) {
-            totalAmount = product.price * product.qty;
-
-            System.out.println("Product ID: " + product.pid);
-            System.out.println("Product Name: " + product.pname);
-            System.out.println("Price: " + product.price);
-            System.out.println("Quantity: " + product.qty);
-            System.out.println("================");
-        }
-
-        System.out.println("Total Amount: " + totalAmount);
+       }
+       System.out.println("Total Amount"+totalAmt);
     }
 }
-

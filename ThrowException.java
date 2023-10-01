@@ -1,4 +1,5 @@
 public class ThrowException {
+    // this is a function
     public static int divide(int a, int b) throws ArithmeticException {
         int result = a / b;
         return result;
@@ -14,5 +15,4 @@ public class ThrowException {
         }
 
     }
-
 }

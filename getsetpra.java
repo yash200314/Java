@@ -1,5 +1,6 @@
 //create a class cylinder and use getters and setter to set its radius and height
 // this is an example of getter and setter
+
 class Mycylinder {
     private int height;
     private int  radius;
@@ -9,6 +10,7 @@ class Mycylinder {
     }
     public void setRadius(int radius){
         this.radius = radius;
+          
     }
 
     // this one is for height

@@ -1,7 +1,5 @@
-/* Write a program to define class Person with
-data member as Personname,Aadharno, Panno.Accept
-information for 5 objects and display appropriate
-information (use this keyword).
+/* Write a program to define class Person withdata member as Personname,Aadharno, Panno.Accept
+information for 5 objects and display appropriate information (use this keyword).
  */
 
  import java.io.*;

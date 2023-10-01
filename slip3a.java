@@ -1,54 +1,53 @@
-// slip3a 
-abstract class shape{
-    abstract double area();
-    abstract double vol();
+// Define an abstract class Shape with abstract methods area () and volume (). 
+//Derive abstract class Shape into two classes Cone and Cylinder. Write a java Program 
+//to calculate area and volume of Cone and Cylinder.(Use Super Keyword.) */
 
+abstract class shape {
+    abstract double area();
+
+    abstract double volume();
 }
-class cone extends shape{
-    private double radius,height;
-    public cone (double radius,double height)
-    {
-        this.radius=radius;
-        this.height=height;
+
+class Cone extends shape {
+    private double radius, height;
+
+    public Cone(double radius, double height) {
+        this.radius = radius;
+        this.height = height;
     }
     public double area()
     {
-         return Math.PI * radius * (radius + Math.sqrt(radius * radius + height * height));
+       return Math.PI * radius * (radius + Math.sqrt(radius * radius * radius + height * height));
     }
-    public double vol()
+    public double volume()
     {
-         return (Math.PI * radius * radius * height) / 3;
+        return (Math.PI * radius * radius * height) / 3;
     }
 }
-
-class cylinder extends shape
-{
-    private double radius,height;
-
-    public cylinder(double radius,double height)
+class Cylinder extends shape{
+    private double radius ,height;
+    public Cylinder(double radius,double height)
     {
-        this.radius=radius;
-        this.height=height;
+        this.radius = radius;
+        this.height = height;
     }
-    double area()
+    public double area()
     {
         return 2 * Math.PI * radius * (radius + height);
     }
-    double vol()
+    public double volume()
     {
         return Math.PI * radius * radius * height;
     }
 }
-
-public class slip3a
-{
-    public static void main(String []args)
-    {
-        cone Cone=new cone(4.5,7.2);
-        System.out.println("Cone Area: " + Cone.area());
-        System.out.println("Cone Volume: " + Cone.vol());
-        cylinder Cylinder = new cylinder(2.8, 5.1);
-        System.out.println("Cylinder Area: " + Cylinder.area());
-        System.out.println("Cylinder Volume: " + Cylinder.vol());
+public class slip3a{
+    public static void main(String[] args) {
+        Cone c = new Cone(3.3,3.7);
+        System.out.println("Cone area"+c.area());
+        System.out.println("cone volume"+c.volume());
+        Cylinder cy = new Cylinder(6.6, 12.4);
+        System.out.println("Cylinder area:" + cy.area());
+        System.out.println("cylinder volume" + cy.volume());
     }
 }
+

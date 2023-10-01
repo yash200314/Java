@@ -19,7 +19,7 @@ public class Slipani2 {
     Slipani2(int r,String n,String Cl,float p)
     {
         roll_no = r;
-        name = n;
+        name = n ;
         Classes = Cl;
         per = p;
     }
